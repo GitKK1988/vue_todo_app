@@ -1,0 +1,114 @@
+body
+{
+background: #BE93C5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #7BC6CC, #BE93C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+min-height: 100vh;
+font-family: 'Permanent Marker';
+}
+
+h1
+{
+    color: #7BC6CC;
+
+}
+
+p, input
+{
+    color: #5a5a5a;
+}
+
+.containercustom
+{
+    background-color: white;
+    text-align: left;
+}
+
+@media only screen and (max-width: 820px)
+{
+    .containercustom
+    {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: auto;
+    }
+}
+@media only screen and (min-width: 820px) and (max-width: 1500px)
+{
+    .containercustom
+    {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 800px;
+    }
+}
+@media only screen and (min-width: 1500px)
+{
+    .containercustom
+    {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1024px;
+    }
+}
+
+.primbutton
+{
+    border: solid 1px #7BC6CC;
+    background-color: #7BC6CC;
+    color: white;
+    padding: 5px;
+}
+.primbutton:hover
+{
+    border: solid 1px #7BC6CC;
+    background-color:white;
+    color: #7BC6CC;
+}
+
+.primbutton:focus
+{
+    outline: none;
+}
+
+input
+{
+ border: solid 1px #7BC6CC;
+ padding: 5px;
+}
+input:focus
+{
+ outline: none;
+}
+
+.togglebutton, .togglebutton:hover, .togglebutton:focus
+{
+
+    outline: none;
+}
+
+.done, .done:hover, .done:focus
+{
+    color: #7BC6CC !important;
+
+}
+
+.notdone, .notdone:hover, .notdone:focus
+{
+    color: grey;
+
+}
+
+.simplebutton
+{
+    border: none;
+    color: #BE93C5;
+    transition: color 0.5s ease;
+}
+.simplebutton:hover, .simplebutton:focus
+{
+    border: none;
+    outline: none;
+    color: #7BC6CC;
+}

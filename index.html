@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/stylefonts.css">
+</head>
+<body>
+    
+<div id="app">
+
+    <div class="containercustom p-4 md:p-12 lg:p-16 xl:p-20 mt-16">
+
+        <h1 class="text-2xl md:text-4xl lg:text-4xl xl:text-4xl mb-4">create your toDo List</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+
+        <div class="inline-block">
+            <form @submit.prevent="additem" class="mb-4">
+                    <input type="text" v-model="newTodo" class="text-md md:text-lg lg:text-lg xl:text-lg">
+                    <button class="primbutton text-md md:text-lg lg:text-lg xl:text-lg" type="submit">add item</button>
+            </form>
+        </div>
+        <div class="text-left md:text-right lg:text-right xl:text-right">
+            <button v-on:click="checkall" class="primbutton text-md md:text-lg lg:text-lg xl:text-lg"><i class="fa fa-check"></i> check all</button>
+            <button v-on:click="deleteall" class="primbutton text-md md:text-lg lg:text-lg xl:text-lg" ><i class="fa fa-trash"></i> delete all</button>
+        </div>
+
+        </div>
+
+        <div v-for="item in todoList">
+            <div class="flex justify-between">
+                <div>
+                    <p class="text-xl md:text-2xl lg:text-2xl xl:text-2xl">{{ item.title }}</p>
+                </div>
+                <div class="inline-block">
+                    <button class="simplebutton mr-4 text-md md:text-lg lg:text-lg xl:text-lg" v-on:click="removeItem(item)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                    <button @click="item.done = !item.done"  :class="{done: item.done}" class="notdone togglebutton text-xl md:text-2xl lg:text-2xl xl:text-2xl">
+                        <span v-if="item.done"><i class="far fa-check-circle"></i></span>
+                        <span v-if="!item.done"><i class="far fa-circle"></i></span>
+                    </button>
+                    <!-- CLASS BINDING: css done class wird angewendet wenn todo.done true -->
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
